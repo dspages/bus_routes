@@ -4,7 +4,7 @@ class CreateStops < ActiveRecord::Migration[5.1]
       t.integer :stop_id
       t.string :on_street
       t.string :cross_street
-      t.string :routes
+      ##t.string :routes ##normalize database by removing routes
       t.float :boardings
       t.float :alightings
       t.string :month_beginning

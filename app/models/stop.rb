@@ -5,7 +5,7 @@ class Stop < ApplicationRecord
     foreign_key: :stop_id,
     class_name: :RouteStop
 
-  has_many :stops,
+  has_many :routes,
     through: :route_stops,
     source: :route
 

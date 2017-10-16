@@ -1,1 +1,1 @@
-json.extract! route, :id, :route_name, :stops
+json.extract! route, :id, :route_name

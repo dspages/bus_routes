@@ -1,1 +1,1 @@
-json.extract! stop, :id, :on_street, :cross_street, :location, :routes
+json.extract! stops, :id, :on_street, :cross_street, :location

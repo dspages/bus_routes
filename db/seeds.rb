@@ -39,10 +39,10 @@ File.open(
     line = parse_line(line)
     obj = {}
     headers.each.with_index do |header, idx|
-      obj[header] = line[idx]
+      obj[header] = line[idx] if header != "routes"
     end
     stop = Stop.create(obj)
-    routes = obj["routes"].split(",")
+    routes = line[4].split(",")##routes
     routes.each do |route|
       if all_routes[route].nil?
         #p all_routes

@@ -1,1 +1,1 @@
-json.partial! 'stop', stop: @stop, routes: @stop.routes
+json.partial! 'stop', stop: @stop

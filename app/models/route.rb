@@ -7,7 +7,7 @@ class Route < ApplicationRecord
 
   has_many :stops,
     through: :route_stops,
-    source: :route
+    source: :stop
 
   def self.max_route
 
