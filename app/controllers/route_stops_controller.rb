@@ -1,2 +1,0 @@
-class RouteStopsController < ApplicationController
-end
