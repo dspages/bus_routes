@@ -9,14 +9,17 @@ class Stop < ApplicationRecord
     through: :route_stops,
     source: :route
 
-  def populate_routes
-    sql =
-    "SELECT *
-    FROM routes
-    ORDER BY routes.stops
-    LIMIT 5"
-    stops = ActiveRecord::Base.connection.execute(sql)
-    stops.getvalue
+  def self.max_stop
+
+    p ActiveRecord::Base.connection.execute(
+      "SELECT stops,  count(DISTINCT route_stops)
+      FROM stops
+      JOIN route_stops ON route_stops.stop_id = stops.id
+      GROUP BY stops.id
+      ORDER BY count(DISTINCT route_stops) DESC
+      LIMIT 1"
+    ).values
+
   end
 
 end
