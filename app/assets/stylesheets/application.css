@@ -14,6 +14,10 @@
  *= require_self
  */
 
+ html{
+   background-color: lightgrey;
+ }
+
 #map{
   height: 400px;
   width: 400px;
@@ -21,4 +25,20 @@
 
 .route-box{
   display: flex;
+}
+
+.input-box{
+  display: flex;
+}
+
+.route{
+  list-style: none;
+  border: 2px solid black;
+  margin: 5px;
+  padding: 2px;
+}
+
+.route:hover{
+  cursor: pointer;
+  background-color: grey;
 }

@@ -16,10 +16,10 @@ class MarkerManager {
   }
 
   parseCoords(loc){
-    console.log(loc);
+    //console.log(loc);
     loc = loc.replace("(", "");
     loc = loc.replace(")", "");
-    return loc.split(", ")
+    return loc.split(", ");
   }
 
   updateMarkers(route) {
@@ -28,14 +28,13 @@ class MarkerManager {
       this.markers[i].setMap(null);
     }
     this.markers = [];
-    console.log(route);
+    //console.log(route);
     for (var i = 0; i < route.stops.length; i++) {
-      console.log(route.stops[i]);
+      //console.log(route.stops[i]);
       let coords = this.parseCoords(route.stops[i].location);
       this.markers.push(this.createMarker(coords[0], coords[1]));
     }
-
-    console.log("update runs");
+    //console.log("update runs");
   }
 
 }

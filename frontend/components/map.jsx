@@ -9,7 +9,7 @@ class Map extends React.Component {
 
   componentDidMount() {
     const mapOptions = {
-      center: { lat: 41.8781, lng: -87.6298 }, //Chicago
+      center: { lat: 41.88, lng: -87.80 }, //Chicago
       zoom: 9
     };
     this.map = new google.maps.Map(this.mapNode, mapOptions);

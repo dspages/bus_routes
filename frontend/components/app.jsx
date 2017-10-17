@@ -40,9 +40,9 @@ class App extends React.Component {
       }
     });
     let components = items.map((cur,idx) =>{
-      return <li value={cur.id} onClick={this.clickRoute} key={idx}>{cur.route_name}</li>;
+      return <li className="route" value={cur.id} onClick={this.clickRoute} key={idx}>{cur.route_name}</li>;
     });
-    console.log(items);
+    //console.log(items);
     this.setState({listItems: components});
   }
 
@@ -61,7 +61,10 @@ class App extends React.Component {
     let items = this.state.listItems;
     return (
       <div>
-        <input value={this.state.inputVal} onChange={this.changeRouteSearch}></input>
+        <div className="input-box">
+          <p>Type a route number here:</p>
+          <input value={this.state.inputVal} onChange={this.changeRouteSearch}></input>
+        </div>
         <div className="route-box">
           <ul>
             {items}
