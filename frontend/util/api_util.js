@@ -1,3 +1,6 @@
+
+
+
 export const indexRoutes = function(){
   return $.ajax({
     method: 'GET',

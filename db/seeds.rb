@@ -42,7 +42,7 @@ File.open(
       obj[header] = line[idx] if header != "routes"
     end
     stop = Stop.create(obj)
-    routes = line[4].split(",")##routes
+    routes = line[3].split(",")##routes
     routes.each do |route|
       if all_routes[route].nil?
         #p all_routes
