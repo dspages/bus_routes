@@ -29,9 +29,9 @@ class MarkerManager {
     }
     this.markers = [];
     //console.log(route);
-    for (var i = 0; i < route.stops.length; i++) {
+    for (var j = 0; j < route.stops.length; j++) {
       //console.log(route.stops[i]);
-      let coords = this.parseCoords(route.stops[i].location);
+      let coords = this.parseCoords(route.stops[j].location);
       this.markers.push(this.createMarker(coords[0], coords[1]));
     }
     //console.log("update runs");
