@@ -1,6 +1,6 @@
-div {
+/*div {
   width: 200px;
-}
+}*/
 
 h2 {
   font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
@@ -8,13 +8,22 @@ h2 {
   padding: 0;
 }
 
-ul {
+.left-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: auto;
-  min-width: 70px;
-  height: 300px;
+  height: 400px;
+  border: 1px solid green;
+  border-radius: 2px;
+}
+
+.route-list{
+  width: 70px;
+}
+
+.stop-list{
+  width: 180px;
 }
 
 li {
@@ -27,16 +36,24 @@ li {
 
 li.stop{
   font-size: 14px;
+  width: 180px;
+}
+
+li.stop:hover {
+  cursor: pointer;
+  font-size: 14px;
+  color: darkgrey;
+  background-color: green;
 }
 
 li:last-child {
   border: none;
 }
 
-li.route {
+li {
   text-decoration: none;
   color: #000;
-  display: block;
+  /*display: block;*/
   width: 60px;
   -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
   -moz-transition: font-size 0.3s ease, background-color 0.3s ease;

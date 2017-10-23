@@ -24,8 +24,15 @@
   margin-left: 12px;
 }
 
+.chart-box{
+  width: 400px;
+  height: 400px;
+}
+
 .item-box{
   display: flex;
+  margin: auto;
+  width: 100%;
 }
 
 .box-item{

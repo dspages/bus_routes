@@ -23,7 +23,6 @@ class BusRoutes extends React.Component {
   clickRoute(event){
     readRoute(event.target.value).then((route) => {
       this.setState({selectedRoute: route});
-      // console.log(route);
     });
   }
 
@@ -38,8 +37,7 @@ class BusRoutes extends React.Component {
     let searchInput = this.state.routeSearchInput.toLowerCase();
     let count = 0;
     let items = this.state.routes.filter((cur,idx) => {
-      if(cur.route_name.toLowerCase().indexOf(searchInput) !== -1 && count < 200){
-        count++;
+      if(cur.route_name.toLowerCase().indexOf(searchInput) !== -1){
         return true;
       }else{
         return false;
@@ -48,7 +46,6 @@ class BusRoutes extends React.Component {
     let components = items.map((cur,idx) => {
       return <li className="route" value={cur.id} onClick={this.clickRoute} key={idx}>{cur.route_name}</li>;
     });
-    //console.log(items);
     this.setState({listItems: components});
   }
 
@@ -82,7 +79,7 @@ class BusRoutes extends React.Component {
           <Link className="box-item" to={`/stops/`}>Go to Stops</Link>
         </div>
         <div className="item-box">
-          <ul>
+          <ul className="left-list route-list">
             {items}
           </ul>
           <div>
