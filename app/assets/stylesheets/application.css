@@ -21,20 +21,21 @@
 #map{
   height: 400px;
   width: 400px;
-  margin: 12px;
+  margin-left: 12px;
 }
 
-.route-box{
+.item-box{
   display: flex;
 }
 
 .box-item{
-  padding: 4px;
+  padding-left: 4px;
+  margin: 2px;
 }
 
 .input-box{
   display: flex;
-  width: 400px;
+  width: 500px;
   align-items: center;
   justify-content: space-between;
 }

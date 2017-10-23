@@ -1,5 +1,6 @@
 import React from 'react';
 import { indexRoutes, readRoute } from '../util/api_util.js';
+import { Link } from 'react-router-dom';
 import { PUBLIC_API_KEY } from '../util/misc_util.js';
 import Map from './map';
 
@@ -17,7 +18,6 @@ class BusRoutes extends React.Component {
     this.changeRouteSearch = this.changeRouteSearch.bind(this);
     this.updateRoutes = this.updateRoutes.bind(this);
     this.clickRoute = this.clickRoute.bind(this);
-
   }
 
   clickRoute(event){
@@ -28,7 +28,7 @@ class BusRoutes extends React.Component {
   }
 
   setRoutes(routes){
-    routes = $.map(routes, (value,index) => {
+    routes = $.map(routes, (value, index) => {
       return value;
     });
     this.setState({routes: routes});
@@ -79,8 +79,9 @@ class BusRoutes extends React.Component {
           <input className="box-item" value={this.state.inputVal} onChange={this.changeRouteSearch}></input>
           <p className="box-item">Number of stops for selected route:</p>
           <p className="box-item">{stopCount}</p>
+          <Link className="box-item" to={`/stops/`}>Go to Stops</Link>
         </div>
-        <div className="route-box">
+        <div className="item-box">
           <ul>
             {items}
           </ul>

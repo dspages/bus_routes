@@ -12,11 +12,21 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  overflow: auto;
+  min-width: 70px;
+  height: 300px;
 }
 
 li {
   font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
   border-bottom: 1px solid green;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+li.stop{
+  font-size: 14px;
 }
 
 li:last-child {
