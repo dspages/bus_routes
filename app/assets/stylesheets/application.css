@@ -15,30 +15,26 @@
  */
 
  html{
-   background-color: lightgrey;
+   background-color: darkgreen;
  }
 
 #map{
   height: 400px;
   width: 400px;
+  margin: 12px;
 }
 
 .route-box{
   display: flex;
 }
 
+.box-item{
+  padding: 4px;
+}
+
 .input-box{
   display: flex;
-}
-
-.route{
-  list-style: none;
-  border: 2px solid black;
-  margin: 5px;
-  padding: 2px;
-}
-
-.route:hover{
-  cursor: pointer;
-  background-color: grey;
+  width: 400px;
+  align-items: center;
+  justify-content: space-between;
 }

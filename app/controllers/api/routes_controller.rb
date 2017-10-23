@@ -1,7 +1,10 @@
 class Api::RoutesController < ApplicationController
 
   def index
-    @routes = Route.all
+    @routes = Route.select("routes.*")
+                    .joins(:route_stops)
+                    .group("routes.id")
+                    .order("COUNT(route_stops.id) DESC")
   end
 
   def show

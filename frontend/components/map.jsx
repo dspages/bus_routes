@@ -1,5 +1,6 @@
 import React from 'react';
 import MarkerManager from '../util/marker_manager.js';
+import { STYLE } from '../util/map_style.js';
 
 class Map extends React.Component {
 
@@ -10,7 +11,8 @@ class Map extends React.Component {
   componentDidMount() {
     const mapOptions = {
       center: { lat: 41.88, lng: -87.80 }, //Chicago
-      zoom: 9
+      zoom: 9,
+      styles: STYLE
     };
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.markerManager = new MarkerManager(this.map);

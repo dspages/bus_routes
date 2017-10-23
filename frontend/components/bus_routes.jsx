@@ -17,12 +17,13 @@ class BusRoutes extends React.Component {
     this.changeRouteSearch = this.changeRouteSearch.bind(this);
     this.updateRoutes = this.updateRoutes.bind(this);
     this.clickRoute = this.clickRoute.bind(this);
+
   }
 
   clickRoute(event){
     readRoute(event.target.value).then((route) => {
       this.setState({selectedRoute: route});
-      //console.log(route);
+      // console.log(route);
     });
   }
 
@@ -58,17 +59,26 @@ class BusRoutes extends React.Component {
 
   componentDidMount(){
     indexRoutes().then(
-      (routes) => this.setRoutes(routes)
+      (routes) => {
+        setTimeout(this.updateRoutes,0);
+        this.setRoutes(routes);
+      }
     );
   }
 
   render() {
+    let stopCount = "N/A";
+    if (this.state.selectedRoute){
+      stopCount = this.state.selectedRoute.stops.length;
+    }
     let items = this.state.listItems;
     return (
       <div>
         <div className="input-box">
-          <p>Type a route number here:</p>
-          <input value={this.state.inputVal} onChange={this.changeRouteSearch}></input>
+          <p className="box-item">Type a route number here:</p>
+          <input className="box-item" value={this.state.inputVal} onChange={this.changeRouteSearch}></input>
+          <p className="box-item">Number of stops for selected route:</p>
+          <p className="box-item">{stopCount}</p>
         </div>
         <div className="route-box">
           <ul>

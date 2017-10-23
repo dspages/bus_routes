@@ -1,5 +1,5 @@
-@stops.each do |stop|
-  json.set! stop.id do
+@stops.each.with_index do |stop, idx|
+  json.set! idx do
     json.partial! 'stop', stop: stop
   end
 end
