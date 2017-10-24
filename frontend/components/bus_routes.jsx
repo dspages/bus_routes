@@ -82,9 +82,7 @@ class BusRoutes extends React.Component {
           <ul className="left-list route-list">
             {items}
           </ul>
-          <div>
-            <Map route={this.state.selectedRoute}/>
-          </div>
+          <Map route={this.state.selectedRoute}/>
         </div>
       </div>
     );

@@ -16,7 +16,6 @@ class MarkerManager {
   }
 
   parseCoords(loc){
-    //console.log(loc);
     loc = loc.replace("(", "");
     loc = loc.replace(")", "");
     return loc.split(", ");
@@ -28,13 +27,10 @@ class MarkerManager {
       this.markers[i].setMap(null);
     }
     this.markers = [];
-    //console.log(route);
     for (var j = 0; j < route.stops.length; j++) {
-      //console.log(route.stops[i]);
       let coords = this.parseCoords(route.stops[j].location);
       this.markers.push(this.createMarker(coords[0], coords[1]));
     }
-    //console.log("update runs");
   }
 
 }

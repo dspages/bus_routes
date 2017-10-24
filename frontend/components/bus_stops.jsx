@@ -1,8 +1,9 @@
 import React from 'react';
 import { indexStops, readStop } from '../util/api_util.js';
 import { Link } from 'react-router-dom';
-import { Bar, BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import BoardingsChart from './boardings_chart';
 
+//This file controls the bus stops page /stops/
 class BusStops extends React.Component {
 
   constructor(props) {
@@ -86,17 +87,7 @@ class BusStops extends React.Component {
           <ul className="stop-list left-list">
             {items.length > 0 ? items : "Loading... this may take several seconds"}
           </ul>
-          <div className="chart-box">
-            {this.state.selectedStop ? <BarChart width={400} height={400} data={[this.state.selectedStop]}
-              margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-             <XAxis dataKey="cross_street"/>
-             <YAxis/>
-             <CartesianGrid strokeDasharray="3 3"/>
-             <Legend layout="vertical"/>
-             <Bar dataKey="boardings" fill="#aa2222" />
-             <Bar dataKey="alightings" fill="#2222aa" />
-            </BarChart> : null}
-          </div>
+          <BoardingsChart selectedStop={this.state.selectedStop}/>
         </div>
       </div>
     );
