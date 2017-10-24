@@ -12,7 +12,7 @@ class Route < ApplicationRecord
   def self.max_route
 
     p ActiveRecord::Base.connection.execute(
-      "SELECT routes.route_name,  count(DISTINCT route_stops)
+      "SELECT routes.route_name, count(DISTINCT route_stops)
       FROM routes
       JOIN route_stops ON route_stops.route_id = routes.id
       GROUP BY routes.route_name

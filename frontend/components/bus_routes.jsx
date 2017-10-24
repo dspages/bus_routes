@@ -76,7 +76,7 @@ class BusRoutes extends React.Component {
           <input className="box-item" value={this.state.inputVal} onChange={this.changeRouteSearch}></input>
           <p className="box-item">Number of stops for selected route:</p>
           <p className="box-item">{stopCount}</p>
-          <Link className="box-item" to={`/stops/`}>Go to Stops</Link>
+          <Link className="box-item" to={`/stops/`}>Visit Stops Page</Link>
         </div>
         <div className="item-box">
           <ul className="left-list route-list">

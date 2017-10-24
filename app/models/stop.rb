@@ -39,7 +39,7 @@ class Stop < ApplicationRecord
 
   def self.max_stop
     p ActiveRecord::Base.connection.execute(
-      "SELECT stops,  count(DISTINCT route_stops)
+      "SELECT stops, count(DISTINCT route_stops)
       FROM stops
       JOIN route_stops ON route_stops.stop_id = stops.id
       GROUP BY stops.id
