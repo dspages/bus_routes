@@ -9,7 +9,6 @@ class Api::RoutesController < ApplicationController
 
   def show
     @route = Route.find(params[:id])
-    @stops = @route.stops
   end
 
 end

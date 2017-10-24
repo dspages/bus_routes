@@ -10,7 +10,7 @@ class BoardingsChart extends React.Component {
   render(){
     return (
       <div className="chart-box">
-        {this.props.selectedStop ? <BarChart width={400} height={400} data={[this.props.selectedStop]}
+        {this.props.selectedStop ? <BarChart width={600} height={500} data={[this.props.selectedStop]}
           margin={{top: 5, right: 30, left: 20, bottom: 5}}>
          <XAxis dataKey="cross_street"/>
          <YAxis/>

@@ -70,8 +70,10 @@ class BusStops extends React.Component {
 
   render(){
     let routeCount = "N/A";
+    let stopCount = "N/A";
     if (this.state.selectedStop){
       routeCount = this.state.selectedStop.routes.length;
+      stopCount = this.state.selectedStop.accessible_stops.length;
     }
     let items = this.state.listItems;
     return (
@@ -81,6 +83,8 @@ class BusStops extends React.Component {
           <input className="box-item" value={this.state.inputVal} onChange={this.changeStopSearch}></input>
           <p className="box-item">Number of routes for selected stop:</p>
           <p className="box-item">{routeCount}</p>
+          <p className="box-item">Number of stops available on those routes:</p>
+          <p className="box-item">{stopCount}</p>
           <Link className="box-item" to={`/routes/`}>Visit Routes Page</Link>
         </div>
         <div className="item-box">

@@ -19,14 +19,14 @@
  }
 
 #map{
-  height: 400px;
-  width: 400px;
+  height: 600px;
+  width: 600px;
   margin-left: 12px;
 }
 
 .chart-box{
-  width: 400px;
-  height: 400px;
+  width: 600px;
+  height: 600px;
 }
 
 .item-box{
@@ -42,7 +42,7 @@
 
 .input-box{
   display: flex;
-  width: 500px;
+  width: 800px;
   align-items: center;
   justify-content: space-between;
 }

@@ -9,6 +9,11 @@ class Stop < ApplicationRecord
     through: :route_stops,
     source: :route
 
+  has_many :accessible_stops,
+    -> { distinct },
+    through: :routes,
+    source: :stops
+
   def self.sum_boardings
     p ActiveRecord::Base.connection.execute(
       "SELECT sum(boardings)

@@ -1,5 +1,5 @@
 class Api::StopsController < ApplicationController
-  
+
   def index
     @stops = Stop.select("stops.*")
                     .joins(:route_stops)
@@ -9,7 +9,6 @@ class Api::StopsController < ApplicationController
 
   def show
     @stop = Stop.find(params[:id])
-    @routes = @stop.routes
   end
 
 end

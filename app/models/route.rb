@@ -9,6 +9,11 @@ class Route < ApplicationRecord
     through: :route_stops,
     source: :stop
 
+  has_many :transferrable_routes,
+    -> { distinct },
+    through: :stops,
+    source: :routes
+
   def self.max_route
 
     p ActiveRecord::Base.connection.execute(
