@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20171015042922) do
   end
 
   create_table "routes", force: :cascade do |t|
+    t.string "stops"
     t.string "route_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 20171015042922) do
     t.integer "stop_id"
     t.string "on_street"
     t.string "cross_street"
+    t.string "routes"
     t.float "boardings"
     t.float "alightings"
     t.string "month_beginning"
